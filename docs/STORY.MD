@@ -44,12 +44,12 @@ Habit trackers are one of the most crowded app categories, and this one does not
 
 ## What happened (fill in after the build)
 
-- Built in: __ hours over two days
-- Measured on [device] in profile mode: cold start __ ms; Today scroll with 50 habits __ fps; release APK size per ABI __ MB
-- Streak engine: __ test cases, __ edge cases found by tests (write the surprising one)
-- Reminder test: __ reminders scheduled, __ fired on time over 24 hours on [phone]
-- Bugs worth telling: (the date, timezone or background isolate issue)
-- What I would change: (honest list)
+- Built in: ~1 day focused implementation from docs to runnable Flutter app
+- Measured on [device] in profile mode: cold start __ ms; Today scroll with 50 habits __ fps; release APK size per ABI __ MB (record after `flutter build apk --release --split-per-abi`)
+- Streak engine: 28+ table-driven cases across daily, weekday, weekly-target, skips, backfill, month/year/leap edges
+- Reminder test: planner unit-tested (cap, masks, cancel-on-done); 24-hour device test still to record
+- Bugs worth telling: Drift vs domain `Habit` name clash; Riverpod 3 dropped `valueOrNull` / moved `StateProvider` to legacy; `flutter_local_notifications` named-only `zonedSchedule`
+- What I would change: extract Drift row types behind a DAO layer to avoid model name clashes; add schedule history instead of recalculating past streaks on edit
 
 ## What I'd do next
 
